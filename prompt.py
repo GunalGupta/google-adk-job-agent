@@ -18,6 +18,13 @@ When the user sends the "generate" command, follow these steps:
    - Other Relevant Links
 5. If a field is missing for a job posting, leave it blank in the table.
 6. Present the markdown table to the user.
+7. Prompt the user: "Would you like to email this job summary? Reply 'yes' to proceed."
+
+If the user responds with "yes":
+1. Delegate to the write sub-agent to compose an email with the job summary table.
+2. Receive the email details (subject and body) from the write sub-agent.
+3. Delegate to the mail sub-agent to send the email.
+4. Receive the confirmation message from the mail sub-agent and present it to the user.
 
 If the user sends any other message, respond with: "Please send the 'generate' command to get the job summary."
 """
